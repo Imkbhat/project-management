@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts :: header"></head>
+
+<body>
+
+<nav th:replace="layouts :: navbar"></nav><!-- Import navbar based on given fragment name -->
+	
+	<div class="container">
+		<form action="/employee/save" th:object="${employee}" method="POST">
+		<table>
+		<tr>
+			<td>First Name:</td><td><input type="text" placeholder="First Name" th:field="*{firstName}"></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td><td><input type="text" placeholder="Last Name" th:field="*{lastName}"></td>
+		</tr>
+		<tr>
+			<td>Email:</td><td><input type="text" placeholder="Email" th:field="*{email}"></td>
+		</tr>
+		</table>
+		<button type="submit">Register Employee</button>
+		</form>
+	</div>
+	
+</body>
+
+</html>
